@@ -25,19 +25,19 @@ def start():
         pt2 = "".join(random.sample(string2, length2))
         pt3 = "".join(random.sample(string3, length3))
 
-        with open("working.txt", "a") as o:
+        with open("codes.txt", "a") as o:
             o.write(f"{pt1}-{pt2}-{pt3}\n")
 
     def next():
         amount = input("How many: ")
         for n in range(int(amount)):
             gen()
-        print(f"Completed, codes saved to working.txt in {os.getcwd()}")
+        print(f"Completed, codes saved to codes.txt in {os.getcwd()}")
 
-    if "working.txt" not in os.listdir():
-        with open("working.txt", "w"):
+    if "codes.txt" not in os.listdir():
+        with open("codes.txt", "w"):
             next()
-    elif "working.txt" in os.listdir():
+    elif "codes.txt" in os.listdir():
         next()
     else:
         print("Error")
